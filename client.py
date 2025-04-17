@@ -5,7 +5,7 @@ import keras
 import csv
 from config import USE_QUANTIZATION
 import time
-# Simple CNN model for classification
+#  CNN model for classification
 def build_model(input_shape, num_classes=2):
     model = keras.models.Sequential([
         keras.layers.Conv1D(32, 3, activation="relu", input_shape=input_shape),
@@ -18,7 +18,7 @@ def build_model(input_shape, num_classes=2):
     model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
     return model
 
-# Load client-specific data shard
+# Load data shard
 def load_data(client_id):
     shard_file = os.path.join("shards", f"client_{client_id}.npz")
     if not os.path.exists(shard_file):
@@ -26,7 +26,7 @@ def load_data(client_id):
     with np.load(shard_file) as data:
         return data["X"], data["y"]
 
-#Quantization for communication efficiency
+#Quantization 
 def stochastic_quantize(weights, num_levels=1024):
     quantized = []
     for w in weights:
