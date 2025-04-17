@@ -1,7 +1,7 @@
 # Honours_Project
 Here is The Code for My honours Project
 
-fdg.yml is the environment it was run in.
+fdg.yml is the environment it was run in./n
 server.py	Sets up and runs the federated learning server.
 split_and_save_data.py	Loads, cleans, scales, and splits the CICIDS2017 dataset into non-IID shards
 client.py	Defines the federated learning client logic, including model creation, local training, optional gradient quantization, and communication with the server.
